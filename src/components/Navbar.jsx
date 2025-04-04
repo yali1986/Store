@@ -33,9 +33,9 @@ export default function Navbar() {
                         </div>
                     </div>
 
-                    <div className="flex flex-row">
+                    <div className="flex flex-row xl:me-20">
                         <Link to="/cart">
-                            <img src={cartIcon} className="w-8" />
+                            <img src={cartIcon} className="w-8 me-" />
                         </Link>
 
                         <div className="bg-red-400 flex justify-center rounded-full w-5 h-5 text-center">

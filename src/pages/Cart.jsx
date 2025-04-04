@@ -38,21 +38,24 @@ export default function Cart() {
     {cart.map(product => {
       const totalPriceProduct = product.quantity * product.price
       return (
-        <div key={product.id} className='mt-14 mx-20'>
+        <div key={product.id} className='mt-14 lg:mx-20'>
           <div className='rounded-xl p-6 shadow-xl bg-white'>
-            <div className='flex justify-between'>
+            <div className='sm:flex justify-between'>
               <div className='flex justify-between'>
-                <div className='flex gap-14'>
-                  <h2 className='font-bold'>{product.title}</h2>
+                <div className='flex gap-14 my-auto'>
+                  <h2 className='font-bold line-clamp-2'>{product.title}</h2>
                   {/* <p>{product.description}</p> */}
                 </div>
               </div>
               <div>
-                <div className='flex gap-6'>
-                  <div className='flex'>
+                <div className='sm:flex gap-6'>
+                <div className='flex justify-between gap-4 items-center'>
+                  <div className='flex mt-6 sm:mt-0'>
                     <img src={product.image} alt={product.title} style={{ maxWidth: "50px", height: "50px", marginLeft: "15px" }} />
                   </div>
-                  <h3 className='font-semibol me-10'>{product.price.toFixed(2).replace('.', ',')} €</h3>
+                  <h3 className='font-semibol md:me-2'>{product.price.toFixed(2).replace('.', ',')}€</h3>
+                  </div>
+                  <div className='flex gap-4 mt-4 sm:mt:0 justify-evenly'>
                   <div><button onClick={() => decrementQuantity(product.id)}>-</button></div>
 
                   <p>{product.quantity}</p>
@@ -60,6 +63,7 @@ export default function Cart() {
                   <p>{totalPriceProduct.toFixed(2).replace('.', ',')}€</p>
                   <div>
                     <button onClick={() => deleteProduct(product.id)} className='font-bold text-red-400'>X</button>
+                  </div>
                   </div>
                 </div>
 

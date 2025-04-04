@@ -22,7 +22,7 @@ export default function Navbar() {
             {location.pathname !== "/" ? <Link to="/">{myStore}</Link> :  myStore }
 
             <div>
-                <div className="flex me-2 sm:me-18 mt-6">
+                <div className="flex me-2 mt-6">
                     <div className="flex">
                         <Link to="/favorites">
                             <img src={blackStart} className="w-8" />
